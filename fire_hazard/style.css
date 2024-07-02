@@ -50,17 +50,17 @@ body, html {
     width: 300px;
     z-index: 10;
 }
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 660px) {
     .header-image {
-        width: 30%;
+        width: 40%;
         top: 8px;
     }
     .interactive-point {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
     }
     .tooltip {
-        font-size: 9px;
+        font-size: 7px;
         width: 150px;
     }
 }
