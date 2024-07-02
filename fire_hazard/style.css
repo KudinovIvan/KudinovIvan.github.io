@@ -15,7 +15,7 @@ body, html {
     width: 100%;
     height: 100%;
     background: url('./media/background.jpg') no-repeat center center;
-    background-size: auto;
+    background-size: cover;
 }
 .header-image {
     position: absolute;
@@ -23,7 +23,7 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
-    width: 40%;
+    width: 35%;
 }
 .interactive-point {
     position: absolute;
@@ -41,6 +41,7 @@ body, html {
 }
 .tooltip {
     font-family: 'Montserrat';
+    font-size: 14px;
     display: none;
     position: absolute;
     background-color: white;
@@ -49,23 +50,17 @@ body, html {
     width: 300px;
     z-index: 10;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 560px) {
     .header-image {
-        width: 50%;
+        width: 30%;
+        top: 8px;
     }
     .interactive-point {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
+        width: 20px;
+        height: 20px;
     }
-}
-@media screen and (max-width: 480px) {
-    .header-image {
-        width: 70%;
-    }
-    .interactive-point {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
+    .tooltip {
+        font-size: 9px;
+        width: 150px;
     }
 }
