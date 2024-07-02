@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пожарная безопасность в гостинице</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div class="background"></div>
+    <img src="./media/header.png" alt="Заголовок" class="header-image">
+
+    <div class="interactive-point" style="top: 35%; left: 41%;" onclick="showTooltip(event, 'tooltip1')"></div>
+    <div class="interactive-point" style="top: 73%; left: 60%;" onclick="showTooltip(event, 'tooltip2')"></div>
+    <div class="interactive-point" style="top: 86%; left: 76%;" onclick="showTooltip(event, 'tooltip3')"></div>
+    <div class="interactive-point" style="top: 54%; left: 34%;" onclick="showTooltip(event, 'tooltip4')"></div>
+    <div class="interactive-point" style="top: 71%; left: 16%;" onclick="showTooltip(event, 'tooltip5')"></div>
+
+    <div id="tooltip1" class="tooltip" style="top: 28%; left: 15%;">
+        Опасность! Открытое окно может вызвать движение воздуха, которое может свалить горящую свечу и привести к пожару. Будьте осторожны с открытым огнем рядом с окнами.
+    </div>
+    <div id="tooltip2" class="tooltip" style="top: 68%; left: 34%;">
+        Опасность! Заряжающийся ноутбук на полотенце может перегреться и воспламениться. Используйте твердые поверхности для зарядки устройств.
+    </div>
+    <div id="tooltip3" class="tooltip" style="top: 80%; left: 50%;">
+        Опасность! Перегретые или поврежденные зарядные устройства могут вызвать пожар. Убедитесь, что провода не повреждены и не перегреваются.
+    </div>
+    <div id="tooltip4" class="tooltip" style="top: 53%; left: 8%;">
+        Увы... Здесь опасности нет
+    </div>
+    <div id="tooltip5" class="tooltip" style="top: 70%; left: 19%;">
+        Увы... Здесь опасности нет
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
