@@ -23,7 +23,7 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
-    width: 35%;
+    width: 45%;
 }
 .interactive-point {
     position: absolute;
@@ -56,8 +56,8 @@ body, html {
         top: 8px;
     }
     .interactive-point {
-        width: 30px;
-        height: 30px;
+        width: 25px;
+        height: 25px;
     }
     .tooltip {
         font-size: 7px;
