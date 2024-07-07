@@ -29,7 +29,7 @@ body, html {
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
-    width: 45%;
+    width: 55%;
 }
 .interactive-point {
     position: absolute;
@@ -47,7 +47,7 @@ body, html {
 }
 .tooltip {
     font-family: 'Montserrat';
-    font-size: 14px;
+    font-size: 16px;
     display: none;
     position: absolute;
     background-color: #FEFACB;
