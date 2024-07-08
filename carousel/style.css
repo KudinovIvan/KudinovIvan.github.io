@@ -1,0 +1,44 @@
+.splide {
+    margin: 0 auto;
+}
+
+img {
+    width: 88%;
+    padding: 6% 6% 6% 6%;
+}
+
+.splide__arrow svg {
+  visibility: hidden;
+}
+
+.splide__arrow--next {
+    background-image: url(./media/arrow_right.png);
+    background-size: contain;
+    right: 0em;
+}
+
+.splide__arrow--prev {
+    background-image: url(./media/arrow_left.png);
+    background-size: contain;
+    left: 0em;
+}
+
+.splide__arrow {
+    border-radius: 0;
+    height: 4em;
+    width: 4em;
+    opacity: 1
+}
+
+@media screen and (max-width: 600px) {
+
+    #main-slider {
+        --max-width: 100vw;
+        max-height: calc(var(--max-width) * 0.58);
+    }
+    .splide__arrow {
+        --max-width: 100vw;
+        height: calc(var(--max-width) * 0.08);
+        width: calc(var(--max-width) * 0.08);
+    }
+}
