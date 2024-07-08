@@ -1,6 +1,5 @@
 var splide = new Splide("#main-slider", {
-    width: 600,
-    height: 362,
+    width: 800,
     type  : 'fade',
     rewind: true,
 });
