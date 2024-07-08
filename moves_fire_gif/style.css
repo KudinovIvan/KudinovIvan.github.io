@@ -2,9 +2,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     margin: 0;
+    overflow: hidden;
 }
+
+html {
+    overflow: hidden;
+}
+
 .container {
     display: flex;
     margin: 2%;
