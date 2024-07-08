@@ -110,9 +110,7 @@ function nextStage() {
 }
 
 function checkOrientation() {
-    console.log(window.innerHeight);
-    console.log(window.innerWidth);
-    if (window.innerHeight > window.innerWidth) {
+    if (window.innerWidth < 800) {
         document.getElementById('orientation-warning').style.display = 'flex';
     } else {
         document.getElementById('orientation-warning').style.display = 'none';
