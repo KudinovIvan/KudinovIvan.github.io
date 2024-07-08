@@ -110,7 +110,7 @@ function nextStage() {
 }
 
 function checkOrientation() {
-    if (window.innerWidth < 800) {
+    if (window.innerWidth < 640) {
         document.getElementById('orientation-warning').style.display = 'flex';
     } else {
         document.getElementById('orientation-warning').style.display = 'none';

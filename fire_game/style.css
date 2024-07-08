@@ -16,6 +16,11 @@ body {
     background-color: #ffffff;
     text-align: center;
     padding: 20px;
+    overflow: hidden;
+}
+
+html {
+    overflow: hidden;
 }
 
 img {
@@ -62,8 +67,6 @@ button:hover {
 #room {
     position: relative;
     width: 100%;
-    height: 400px;
-    background-color: #ddd;
     margin-bottom: 20px;
 }
 
