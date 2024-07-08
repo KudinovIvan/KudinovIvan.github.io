@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пожарный Квест</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="orientation-warning" style="display:none;">
+        <h2>Пожалуйста, поверните ваше устройство в горизонтальную ориентацию для игры.</h2>
+    </div>
+    <div id="game">
+        <h1>Пожарный Квест</h1>
+        <div id="story">
+            <p>В этой игре вам предстоит выбраться из помещения, используя полученные знания о СОУЭ, АУПС, АУП, СПЗ и огнетушителях. Будьте внимательны и следуйте инструкциям, чтобы успешно пройти все этапы!</p>
+            <button onclick="startGame()">Начать игру</button>
+        </div>
+        <div id="finished" style="display: none;">
+            <p>Поздравляем! Вы успешно прошли все этапы!</p>
+        </div>
+        <div id="game-stage" style="display: none;">
+            <div id="room">
+                <img id="room-image" src="" alt="Комната"/>
+            </div>
+            <div id="instructions">
+                <h2 id="stage-title"></h2>
+                <p id="stage-description"></p>
+                <div id="correct" style="text-align: center; display: none"></div>
+                <div id="incorrect" style="text-align: center; display: none"></div>
+                <button onclick="nextStage()" id="next-btn" style="text-align: center; display:none;">Далее</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
