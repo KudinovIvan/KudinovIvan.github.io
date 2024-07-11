@@ -7,28 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="orientation-warning" style="display:none;">
+    <div id="orientation-warning" class="black" style="display:none;">
         <h2>Пожалуйста, поверните ваше устройство в горизонтальную ориентацию для игры.</h2>
     </div>
-    <div id="game">
-        <h1>Пожарный Квест</h1>
-        <div id="story">
-            <p>В этой игре вам предстоит выбраться из помещения, используя полученные знания о СОУЭ, АУПС, АУП, СПЗ и огнетушителях. Будьте внимательны и следуйте инструкциям, чтобы успешно пройти все этапы!</p>
-            <button onclick="startGame()">Начать игру</button>
+    <div id="info_popup" class="black" style="display:none">
+        <div>
+            <div id="info_popup_block" class="popup_block">
+            </div>
         </div>
-        <div id="finished" style="display: none;">
-            <p>Поздравляем! Вы успешно прошли все этапы!</p>
+    </div>
+    <div id="error_popup" class="black" style="display:none;">
+        <div>
+            <div id="error_popup_block" class="popup_block">
+            </div>
+        </div>
+    </div>
+    <div id="success_popup" class="black" style="display:none;">
+        <div>
+            <div id="success_popup_block" class="popup_block">
+            </div>
+        </div>
+    </div>
+    <div id="game">
+        <div id="story" style="padding-top: 20px; width: 100%; position: relative">
+            <img id="first_screen" src="./media/first_screen.png" alt=""/>
+            <img style="width: 35%; position: absolute; left: 30%; top: 70%; cursor: pointer;" src="./media/start_button.png" onclick="startGame()"/>
+        </div>
+        <div id="finished" style="padding-top: 20px; width: 100%; position: relative; display: none;">
+            <img src="./media/end_screen.png"/>
         </div>
         <div id="game-stage" style="display: none;">
             <div id="room">
                 <img id="room-image" src="" alt="Комната"/>
-            </div>
-            <div id="instructions">
-                <h2 id="stage-title"></h2>
-                <p id="stage-description"></p>
-                <div id="correct" style="text-align: center; display: none"></div>
-                <div id="incorrect" style="text-align: center; display: none"></div>
-                <button onclick="nextStage()" id="next-btn" style="text-align: center; display:none;">Далее</button>
             </div>
         </div>
     </div>

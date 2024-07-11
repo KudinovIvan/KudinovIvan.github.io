@@ -1,7 +1,7 @@
 const stages = [
     {
         title: "Этап 1: СОУЭ",
-        description: "Найдите и взаимодействуйте с системой оповещения и управления эвакуацией (СОУЭ).",
+        description: "Найдите и нажмите на систему оповещения и управления эвакуацией (СОУЭ).",
         image: "./media/room1.png",
         items: [
             { id: 'sou', image: './media/sou.png', correct: true, x: 86, y: 30, width: 15, opacity: 1, info_text: "Верно! Молодец!" },
@@ -59,12 +59,11 @@ function startGame() {
     document.getElementById('story').style.display = 'none';
     document.getElementById('game-stage').style.display = 'block';
     loadStage();
+    info_popup();
 }
 
 function loadStage() {
     const stage = stages[currentStage];
-    document.getElementById('stage-title').innerText = stage.title;
-    document.getElementById('stage-description').innerText = stage.description;
 
     const room = document.getElementById('room');
     room.innerHTML = '<img id="room-image" src="' + stage.image + '" alt="Комната" />';
@@ -85,24 +84,18 @@ function loadStage() {
 function handleAction(correct, info_text) {
 
     if (correct) {
-        document.getElementById('incorrect').style.display = 'none';
-        document.getElementById('correct').style.display = 'block';
-        document.getElementById('correct').innerHTML = '<p class="answer">Ответ: </p>' + info_text;
-        document.getElementById('next-btn').style.display = 'block';
+        success_popup(info_text);
     } else {
-        document.getElementById('correct').style.display = 'none';
-        document.getElementById('next-btn').style.display = 'none';
-        document.getElementById('incorrect').style.display = 'block';
-        document.getElementById('incorrect').innerHTML = '<p class="answer">Ответ: </p>' + info_text;
+        error_popup(info_text);
     }
 }
 
 function nextStage() {
     currentStage++;
+    close_popup('success_popup');
     if (currentStage < stages.length) {
         loadStage();
-        document.getElementById('correct').style.display = 'none';
-        document.getElementById('next-btn').style.display = 'none';
+        info_popup();
     } else {
         document.getElementById('game-stage').style.display = 'none';
         document.getElementById('finished').style.display = 'block';
@@ -111,10 +104,56 @@ function nextStage() {
 
 function checkOrientation() {
     if (window.innerWidth < 600) {
+        document.getElementById('info_popup').style.display = 'none';
+        document.getElementById('error_popup').style.display = 'none';
+        document.getElementById('success_popup').style.display = 'none';
         document.getElementById('orientation-warning').style.display = 'flex';
     } else {
         document.getElementById('orientation-warning').style.display = 'none';
     }
+}
+
+
+function info_popup() {
+    var info_popup = document.getElementById('info_popup');
+    info_popup.style.display = 'block'
+    var info_popup_block = document.getElementById('info_popup_block');
+    const stage = stages[currentStage];
+    info_popup_block.innerHTML = "<p class='text_popup'>" + stage.description + "</p>";
+    const div = document.createElement('img');
+    div.src = "./media/ok_but.png";
+    div.style = "width: 20%; padding-bottom:5%; cursor: pointer";
+    div.onclick = () => close_popup('info_popup');
+    info_popup_block.appendChild(div);
+}
+
+function error_popup(info_text) {
+    var error_popup = document.getElementById('error_popup');
+    error_popup.style.display = 'block'
+    var error_popup_block = document.getElementById('error_popup_block');
+    error_popup_block.innerHTML = "<img src='./media/cross_icon.png' style='width: 10%; padding-top: 5%'/><p class='text_popup' style='padding-top: 0%;'>" + info_text + "</p>";
+    const div = document.createElement('img');
+    div.src = "./media/again_but.png";
+    div.style = "width: 35%; padding-bottom:5%; cursor: pointer";
+    div.onclick = () => close_popup('error_popup');
+    error_popup_block.appendChild(div);
+}
+
+function success_popup(info_text) {
+    var success_popup = document.getElementById('success_popup');
+    success_popup.style.display = 'block'
+    var success_popup_block = document.getElementById('success_popup_block');
+    success_popup_block.innerHTML = "<img src='./media/check_icon.png' style='width: 10%; padding-top: 5%'/><p class='text_popup' style='padding-top: 0%;'>" + info_text + "</p>";
+    const div = document.createElement('img');
+    div.src = "./media/next_but.png";
+    div.style = "width: 35%; padding-bottom:5%; cursor: pointer";
+    div.onclick = () => nextStage();
+    success_popup_block.appendChild(div);
+}
+
+function close_popup(popup_id) {
+    var popup = document.getElementById(popup_id)
+    popup.style.display = 'none';
 }
 
 window.addEventListener('resize', checkOrientation);
