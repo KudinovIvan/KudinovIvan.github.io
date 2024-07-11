@@ -26,7 +26,7 @@ const stages = [
         image: "./media/room3.png",
         items: [
             { id: 'aup', image: './media/aup.png', correct: true, x: 40, y: 1, width: 4, opacity: 0.7, info_text: "Да! Супер!" },
-            { id: 'spray1', image: './media/spray1.png', correct: false, x: 34, y: 65, width: 3, opacity: 1, info_text: "Неверно, спрей оставили во время уборки, что приведет к увеличению пламени, но он никак не взаимодействует с системой АУП"},
+            { id: 'spray1', image: './media/spray1.png', correct: false, x: 34, y: 65, width: 3, opacity: 1, info_text: "Неверно, спрей оставили во время уборки, что приведет к увеличению пламени в случае пожара, но он никак не взаимодействует СПЗ"},
             { id: 'extinguisher', image: './media/extinguisher.png', correct: false, x: 43, y: 77, width: 7, opacity: 1, info_text: "Неправильно, это огнетушитель"}
         ]
     },
@@ -36,7 +36,7 @@ const stages = [
         image: "./media/room4.png",
         items: [
             { id: 'spz', image: './media/spz.png', correct: true, x: 4, y: 43, width: 6, opacity: 1, info_text: "Верно, так и есть!" },
-            { id: 'spray2', image: './media/spray2.png', correct: false, x: 1, y: 78, width: 4, opacity: 1, info_text: "Неверно, спрей оставили во время уборки, что приведет к увеличению пламени в случае пожара, но он никак не взаимодействует СПЗ"},
+            { id: 'spray2', image: './media/spray2.png', correct: false, x: 1, y: 78, width: 4, opacity: 1, info_text: "Неверно, спрей оставили во время уборки, что приведет к увеличению пламени, но он никак не взаимодействует с системой АУП"},
             { id: 'aups', image: './media/aups.png', correct: false, x: 17, y: 0, width: 11, opacity: 0.4, info_text: "Неправильно, это АУПС"},
             { id: 'socket', image: './media/socket.png', correct: false, x: 96, y: 70, width: 3, opacity: 1, info_text: "Неверно, из-за короткого замыкания в этой комнате случился пожар, но это не СПЗ"}
         ]
@@ -72,10 +72,10 @@ function loadStage() {
         div.className = 'item';
         div.id = item.id;
         div.src = item.image;
-        div.style.left = item.x + '%';
-        div.style.top = item.y + '%';
-        div.style.width = item.width + '%';
-        div.style.opacity = item.opacity;
+        var style = "left: " + item.x + "%; top: " + item.y + "%; width: " + item.width + "%; opacity: " + item.opacity + "; ";
+        style = style + "padding-right: 4%; ";
+        style = style + "padding-bottom: 4%; ";
+        div.style = style;
         div.onclick = () => handleAction(item.correct, item.info_text);
         room.appendChild(div);
     });
