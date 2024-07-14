@@ -103,7 +103,7 @@ function nextStage() {
 }
 
 function checkOrientation() {
-    if (window.innerWidth < 600) {
+    if (window.innerWidth < 500) {
         document.getElementById('info_popup').style.display = 'none';
         document.getElementById('error_popup').style.display = 'none';
         document.getElementById('success_popup').style.display = 'none';
