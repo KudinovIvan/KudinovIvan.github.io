@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             currentCardIndex = (currentCardIndex + 1) % column1Cards.length;
         }
         isColumn1Active = !isColumn1Active;
-        setTimeout(flashCards, 1000);
+        setTimeout(flashCards, 2000);
     }
     flashCards();
 });
